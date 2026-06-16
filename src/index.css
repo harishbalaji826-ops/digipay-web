@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #2563eb;
+  --color-brand-cyan: #06b6d4;
+  --color-success-green: #10b981;
+  --color-warning-orange: #f59e0b;
+  --color-error-red: #ef4444;
+  
+  --font-sans: -apple-system, BlinkMacSystemFont, "Outfit", "Inter", sans-serif;
+}
+
+/* Base resets & Custom global styling */
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-50 antialiased min-h-screen selection:bg-brand-blue/30 selection:text-white;
+  }
+}
+
+/* Soft glassmorphism panel helper */
+.glass-panel {
+  @apply bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-3xl p-6 transition-all duration-350;
+}
+
+/* Micro-animations */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
